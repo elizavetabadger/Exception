@@ -23,17 +23,14 @@ public static void printSum(Integer a, Integer b) throws FileNotFoundException {
 */
 
 public class Main {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         try {
             int a = 90;
             int b = 3;
             System.out.println(a / b);
             printSum(23, 234);
             int[] abc = { 1, 2 };
-            abc[3] = 9; // Что тут происходит, ошибка не идет
-
-        } catch (NullPointerException ex) {
-            System.out.println("Указатель не может указывать на null!"); //null обрабатывается?
+            abc[3] = 1;
 
         } catch (IndexOutOfBoundsException ex) {
             System.out.println("Массив выходит за пределы своего размера!");
@@ -48,7 +45,5 @@ public class Main {
 
     }
 }
-    /*public static void printSum(Integer a, Integer b) throws FileNotFoundException {
-    System.out.println(a + b);
-    } // Не хватает уловий?*/
+
 

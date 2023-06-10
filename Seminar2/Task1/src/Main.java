@@ -18,7 +18,6 @@ public class Main {
             } catch (NumberFormatException e) {
                 System.out.println("Вы ввели что-то не то");
             }
-            scanner.close();
         }
     }
 }

@@ -10,14 +10,16 @@ try {
 
 
 public class Main {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         try {
             int d = 1;
-            int intArray[] = {1, 2, 3, 4, 5};
-            double catchedRes1 = intArray[2] / d;
+            int intArray[] = {1, -2, 3, 4, 5};
+            float catchedRes1 = intArray[1] / d;
             System.out.println("catchedRes1 = " + catchedRes1);
         } catch (ArithmeticException e) {
             System.out.println("Catching exception: " + e);
+        } catch (ArrayIndexOutOfBoundsException ex){
+            System.out.println("Такого элемента нет");
         }
     }
 }
