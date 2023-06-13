@@ -14,11 +14,16 @@ public class Main {
         try {
             int d = 1;
             int intArray[] = {1, -2, 3, 4, 5};
-            float catchedRes1 = intArray[1] / d;
+            float catchedRes1 = intArray[8] / d;
             System.out.println("catchedRes1 = " + catchedRes1);
-        } catch (ArithmeticException e) {
+        }
+        // При выполнении деления на 0, может произойти ошибка ArithmeticException, поэтому необходимо её обработать
+        catch (ArithmeticException e) {
             System.out.println("Catching exception: " + e);
-        } catch (ArrayIndexOutOfBoundsException ex){
+        }
+        // При работе с массивами, мы можем случай запросить элемент из несуществующей ячейки массива (например отрицательный номер ячейки или очень большой номер)
+        // В таком случае происходит ArrayIndexOutOfBoundsException
+        catch (ArrayIndexOutOfBoundsException ex){
             System.out.println("Такого элемента нет");
         }
     }

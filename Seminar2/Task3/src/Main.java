@@ -23,6 +23,9 @@ public static void printSum(Integer a, Integer b) throws FileNotFoundException {
 */
 
 public class Main {
+
+    // Так как мы выполнили обработку возможно возникающих ошибок, то прописывание throws Exception, является излишним
+    // Потому что теперь нет сценариев при которых метод main может упасть с ошибкой
     public static void main(String[] args) {
         try {
             int a = 90;
@@ -32,14 +35,21 @@ public class Main {
             int[] abc = { 1, 2 };
             abc[3] = 1;
 
-        } catch (IndexOutOfBoundsException ex) {
+        }
+        // Так как массив данных задан и он не заводится через ввод от пользователя, мы точно знаем, что все данные массива корректны
+        // В связи с этим у нас не может произойти NullPointerException, так как отсутствует элемент null
+        catch (IndexOutOfBoundsException ex) {
             System.out.println("Массив выходит за пределы своего размера!");
-
-        } catch (Throwable ex) {
+        }
+        // Согласно иерархии наследования класс Throwable включает в себя все виды ошибок,
+        // а так как в блоке try-catch обработка ошибок определяется порядком определения catch блоков, то необходимо идти от частного к общему
+        // поэтому блок Throwable должен идти последним
+        catch (Throwable ex) {
             System.out.println("Что-то пошло не так...");
         }
-
     }
+
+    // При работе с данным методов, мы не работаем с файлами, а следовательно здесь не могут возникать ошибки, такие как FileNotFoundException
     public static void printSum(Integer a, Integer b) {
         System.out.println(a + b);
 
